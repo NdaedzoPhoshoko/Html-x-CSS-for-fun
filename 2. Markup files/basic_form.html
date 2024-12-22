@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester Doc</title>
+    <style type="text/css">
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        fieldset{
+            color: rgb(19, 124, 216);
+        }
+        #referrer, .buttons{
+            color: rgb(213, 83, 83);
+            background: rgba(46, 169, 226, 0.232);
+            font-family:'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <!--creating a form for user feedback-->
+    <form action="https://www.facebook.com/review.php" method="get">
+        <!--first group of form controls-->
+        <fieldset>
+            <legend>Give Your Details:</legend> <!--title of thwe fieldset-->
+            <label for="username">Name:</label>
+            <input name="username" type="text" size="30" maxlength="40">
+            <br />
+            <br />
+            <label for="email">Email:</label>
+            <input name="email" type="email" size="30" maxlength="50">
+        </fieldset>
+        <br />
+        <!--second group-->
+        <fieldset>
+            <legend>Your Kindest Review:</legend>
+            <p>
+            <label for="referrer">How did you hear about us?</label>
+            <select name="referrer" id="referrer">
+                <option value="google">Google</option>
+                <option value="linkedin">Linkedin</option>
+                <option value="friend">Friend</option>
+                <option value="advert">Advert</option>
+                <option value="other">Other</option>
+            </select>
+            </p>
+
+            <p>
+                <label for="revisit">Would you visit again?</label>
+                <br />
+                <label for="yes">Yes</label>
+                <input type="radio" name="yes">
+                <label for="no">No</label>
+                <input type="radio" name="no">
+                <label for="maybe">Maybe</label>
+                <input type="radio" name="maybe">
+            </p>
+
+            <p>
+                <label for="comment">Comment</label>
+                <br />
+                <textarea rows="4" cols="20" id="user-comment"></textarea>            
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" name="allow-updates" checked="checked">
+                    Subscribe for email updates
+                </label>
+            </p>
+
+            <input type="submit" class="buttons" value="Submit review">
+        </fieldset>
+    </form>
+</body>
+</html>
