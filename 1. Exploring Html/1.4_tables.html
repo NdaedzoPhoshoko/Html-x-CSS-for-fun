@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body style="width: 50%;font-size: 15;font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;">
+    <h2>Building Tables</h2>
+    <p>A table is made up of grids( blocks). In order to build a table we need the to write out the table row by row
+        using<ul>
+            <li>table tag</li>
+            <li>th tag (table heading)</li>
+            <li>tr tag (table row)</li>
+            <li>td tag (table data)</li>
+        </ul>
+    </p>
+
+    <h3>Example of a basic table(borders are not showing as css is not yet applied)</h3>
+    <table>
+        <tr> <!--this shows that a row consists of multiple table-data (td)-->
+            <td>Chicken</td>
+            <td>Computer</td>
+            <td>Mouse</td>
+        </tr>
+        <tr>
+            <td>Human</td>
+            <td>Pencil</td>
+            <td>Microphone</td>
+        </tr>
+        <tr>
+            <td>Laptop</td>
+            <td>House</td>
+            <td>Pizza</td>
+        </tr>
+        <tr>
+            <td>Keyboard</td>
+            <td></td> <!--if a cell is empty, use the td element in order to render the table correctly-->
+            <td></td>
+        </tr>
+    </table>
+
+    <h3>Example of a table with a headings</h3>
+    <p>th tag is used when we give headings to rows and columns. It usually has the <b>scope</b> attribute is also used 
+    to indicate whether the heading is for a row or col. <strong>Do not mistaken th with thead</strong></p>
+    <table>
+        <thead></thead>
+        <tr> <!--a row to store headings-->
+            <th scope="col">Laptop Name</th> <!--heading for a first column-->
+            <th scope="col">Was</th> <!--for middle column-->
+            <th scope="col">Now</th> <!--for third column-->
+        </tr>
+        <tr>
+            <td>Lenovo i5</td>
+            <td>
+                <del>R15,000</del>
+            </td>
+            <td>R10,000</td>
+        </tr>
+        <tr>
+            <td>Lenovo i3</td>
+            <td>
+                <del>R9,800</del>
+            </td>
+            <td>R7,200</td>
+        </tr>
+    </table>
+
+    <p>You may give headings to rows, as shown below</p>
+    <table>
+        <tr>
+            <th></th> <!--table heading given to avoid problems of table rendering-->
+            <th scope="col">Saturday</th>
+            <th scope="col">Sunday</th>
+        </tr>
+        <tr>
+            <th scope="row">Tickets sold: </th>
+            <td>120</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <th scope="row">Total sales: </th>
+            <td>R1000</td>
+            <td>R2,300</td>
+        </tr>
+    </table>
+
+    <h3>Table with rows spanning the coloms(colspan attribute)</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th scope="col">10AM</th>
+            <th scope="col">11AM</th>
+            <th scope="col">12PM</th>
+            <th scope="col">13PM</th>
+        </tr>
+        <tr>
+            <th scope="row">Monday</th>
+            <td colspan="2">Spider-Man</td> <!--cell occupies two colomns-->
+            <td>Viking S01-E04</td>
+            <td>Pink Panther Show</td>
+        </tr>
+        <tr>
+            <th scope="row">Tuesday</th>
+            <td>Regular Show</td>
+            <td>Viking S01-E05</td>
+            <td colspan="2">Invisible Man</td>
+        </tr>
+        <tr>
+            <th scope="row">Wednesday</th>
+            <td>Regular Show</td>
+            <td>Viking S01-E06</td>
+            <td>Tom and Jerry</td>
+            <td>The NASA show</td>
+        </tr>
+    </table>
+
+    <h3>Table with colomns spanning the rows(rowspan attribute)</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th scope="col">10AM</th>
+            <th scope="col">11AM</th>
+            <th scope="col">12PM</th>
+            <th scope="col">13PM</th>
+        </tr>
+        <tr>
+            <th scope="row">Monday</th>
+            <td rowspan="2">Spider-Man</td> <!--cell occupies two rows-->
+            <td>Viking S01-E04</td>
+            <td>Pink Panther Show</td>
+            <td>Regular Show</td>
+        </tr>
+        <tr>
+            <th scope="row">Tuesday</th>
+            <td>Viking S01-E05</td>
+            <td>Invisible Man</td>
+            <td>Rythm City</td>
+        </tr>
+        <tr>
+            <th scope="row">Wednesday</th>
+            <td>The Witcher</td>
+            <td>Viking S01-E06</td>
+            <td>Tom and Jerry</td>
+            <td>The NASA show</td>
+        </tr>
+    </table>
+    
+    <table cellpadding="10" cellspacing="5">
+        <thead>Showing a table that has <del>width</del>, cellpadding, and cellspacing attributes 
+        <tr>
+            <th></th>
+            <th scope="col">Morning</th>
+            <th scope="col">Afternoon</th>
+            <th scope="col">Evening</th>
+        </tr>
+        </thead>
+     <tbody>
+        <tr>
+            <th scope="row">08</th>
+            <td>Pasta</td>
+            <td>Fried meat+Pap</td>
+            <td>Chips+softdrink</td>
+        </tr>
+        <tr>
+            <th scope="row">09</th>
+            <td>Sliced bread+Tea</td>
+            <td>Pasta</td>
+            <td>Paparoni Pizza</td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td>Sliced bread+Tea</td>
+            <td>Vegetables+Juice</td>
+            <td>Watermelon+Warm Juice</td>
+        </tr>
+        <tr>
+            <th scope="row">11</th>
+            <td>Pasta</td>
+            <td>Fried meat+Pap</td>
+            <td>Chips+softdrink</td>
+        </tr>
+        <tr>
+            <th scope="row">12</th>
+            <td>Sliced bread+Tea</td>
+            <td>Vegetables+Juice</td>
+            <td>Watermelon+Warm Juice</td>
+        </tr>
+        <tr>
+            <th scope="row">08</th>
+            <td>Pasta</td>
+            <td>Fried meat+Pap</td>
+            <td>Chips+softdrink</td>
+        </tr>
+        <tr>
+            <th scope="row">09</th>
+            <td>Sliced bread+Tea</td>
+            <td>Pasta</td>
+            <td>Paparoni Pizza</td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td>Sliced bread+Tea</td>
+            <td>Vegetables+Juice</td>
+            <td>Watermelon+Warm Juice</td>
+        </tr>
+      </tbody>
+      <tfoot>
+          <tr>
+              <th scope="row">Cost</th>
+              <td>R2000.00</td>
+              <td>R4000.00</td>
+              <td>R2400.00</td>
+          </tr>
+      </tfoot>
+    </table>
+    
+    <br />
+    <table border="2" bgcolor="#f1f1f1" cellpadding="10" cellspacing="5">
+        <thead>Showing a table that introduce border and bgcolor attributes
+        <tr>
+            <th></th>
+            <th scope="col" bgcolor="#cccccc">Morning</th>
+            <th scope="col">Afternoon</th>
+            <th scope="col">Evening</th>
+        </tr>
+        </thead>
+     <tbody>
+        <tr>
+            <th scope="row">08</th>
+            <td bgcolor="#cccccc">Pasta</td>
+            <td>Fried meat+Pap</td>
+            <td>Chips+softdrink</td>
+        </tr>
+        <tr>
+            <th scope="row">09</th>
+            <td bgcolor="#cccccc">Sliced bread+Tea</td>
+            <td>Pasta</td>
+            <td>Paparoni Pizza</td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td bgcolor="#cccccc">Sliced bread+Tea</td>
+            <td>Vegetables+Juice</td>
+            <td>Watermelon+Warm Juice</td>
+        </tr>
+        <tr>
+            <th scope="row">11</th>
+            <td bgcolor="#cccccc">Pasta</td>
+            <td>Fried meat+Pap</td>
+            <td>Chips+softdrink</td>
+        </tr>
+        <tr>
+            <th scope="row">12</th>
+            <td bgcolor="#cccccc">Sliced bread+Tea</td>
+            <td>Vegetables+Juice</td>
+            <td>Watermelon+Warm Juice</td>
+        </tr>
+        <tr>
+            <th scope="row">08</th>
+            <td bgcolor="#cccccc">Pasta</td>
+            <td>Fried meat+Pap</td>
+            <td>Chips+softdrink</td>
+        </tr>
+        <tr>
+            <th scope="row">09</th>
+            <td bgcolor="#cccccc">Sliced bread+Tea</td>
+            <td>Pasta</td>
+            <td>Paparoni Pizza</td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td bgcolor="#cccccc">Sliced bread+Tea</td>
+            <td>Vegetables+Juice</td>
+            <td>Watermelon+Warm Juice</td>
+        </tr>
+      </tbody>
+      <tfoot>
+          <tr>
+              <th scope="row">Cost</th>
+              <td>R2000.00</td>
+              <td>R4000.00</td>
+              <td>R2400.00</td>
+          </tr>
+      </tfoot>
+    </table>
+    <hr />
+    <p>Move to next project, 
+        <button>
+            <a href="1.5_forms.html">Next</a>
+        </button>
+    </p>
+</body>
+</html>

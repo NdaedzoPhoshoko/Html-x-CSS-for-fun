@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Markup</title>
+</head>
+<body style="width: 50%;font-size: 15;font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;">
+    <h2>Extra Markup</h2>
+    <h3>iframe tag</h3>
+    <p>Used to include a page inside another web page, it uses width, height, src, title, frameborder, scrolling attributes. <br />
+        You can choose to either embed a map, html, video, ads or etc. 
+    </p>
+    <p> View Google map using iframe <a href="example-iframe.html" target="_blank">HERE</a> (opens on new table)</p>
+    <h3>Meta tag</h3>
+    <p>Meta tag is an empty element used to describe information about a page, it is included on the head element</p>
+    <p>it has attributes such as:
+        <ul><li>name and content</li>
+            <li>http-equiv and content</li>
+            <li>charset</li>
+        </ul>
+        examples include:
+        <code><br />
+            name="description" content="put description here" <br />
+            name="keywords" content="keyword1, keyword2" used to help search engines identify webpage <br />
+            name="robots" content="noindex" used to not allow search engines to identify web page <br />
+            name="robots" content="nofollow" used to allow search engines to identify web page, not related links <br />
+            http-equiv="author" content="Ndaedzo Clement Phoshoko" <br />
+            http-equiv="pragma" content="no-cache" sed to not allow caching the web page<br />
+            http-equiv="expires" content="Sun, 31, Dec 2024 23:59:59 GMT" used to specify date and time for captured captured to ellapse<br />
+        </code>
+        <!--put box with code element here-->
+    </p>
+    
+    <h3>Grouping Elements</h3>
+    <h4>div tag</h4>
+    <p>Used to group elements that needs to share markup(used for block elements)</p>
+    <h5>example 1 below includes a section of code with a computer image</h5>
+    <div style="background-color: #0d0a0aa6;color: whitesmoke;width: 400px;height: 150px;">
+        <code>
+            <img src="images/Lenovo_IdeaCentre_510.png" align="left" alt="Lenovo Ideapad Desktop Computer with Mouse and Keyboard"
+            width="200" />
+            <p><br /><br />Properties:<br />
+                Was: <del>R20000.00</del><br />
+                Now: <ins>R11990,00</ins><br />
+                <b>Hurry while sale last!</b><br />
+            </p>
+        </code>
+    </div>
+
+    <h4>span tag</h4>
+    <p>Just like div, except that it is used to group inline elements.</p>
+    <h5>example 2 below includes a bold pragraph with some words that are styled uniquely from sourrounding texts</h5>
+    <p style="text-transform: uppercase;">
+        <b>I used to be a hip hop and rap artist back in high school. At varsity, here I met the <span style="color: blue;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">digital world</span>, binary made me detach 
+            to the world of binary. Now I have goals of becoming a full stack developer with magnet businesses.
+        </b>
+    </p>
+
+    <h2>Flash for video player</h2>
+    <p>Used to play animation on websites( video and audio is allowed in flash)</p>
+    <p>There are Three steps needed to used flash
+        <ol type="1">
+            <li>Convert video into FLV format</li>
+            <li>Find FLV player to play the video</li>
+            <li>Include player and video in the webpage</li>
+        </ol></p>
+    <p>See an <a href="../1. Exploring Html/flash/index.html">Example using Flash</a>
+    </p>
+    <h2>Html5 Video tag</h2>
+    <p>This element came with html5, not all browsers support it. It is advisable to use it and flash altogether to favor those with visual and/or physical impairments.
+        It uses these attributes and values
+        <ul><li>src - specifies the path to the video</li>
+            <li>poster - an image shown before the video plays</li>
+            <li>width &amp; height</li>
+            <li>controls - allows browser to offer its own controls</li>
+            <li>autoplay - video starts to play automatically</li>
+            <li>preload - what to do when browser loads, values can be
+                <ol type="a"><li><b>none</b> - not load until user presses play</li>
+                    <li><b>auto</b> - browser downloads the video when page loads( not recommended as this reduces speed of a website, nuless it is used on a streaming site).</li>
+                    <li><b>metadata</b> - browser shows information about the video( this includes size, duration, track list, etc).</li>
+                </ol>
+            </li>
+        </ul>
+    </p>
+
+    <div style="font-size: large;"><p>Example of the Video tag</p>
+        <video src="../1. Exploring Html/flash/onlineclass_h264format.mp4" width="50%"
+        poster="images/PlayVideoImage.png"
+        controls
+        preload="none">
+            A video of a math online class
+        </video>
+    </div>
+    <!--you can use multiple video sources to allow different broswers to play the video
+        Note chrome, operamini, firefox uses .webM format
+        while IE and Safari uses h264 format
+        example:
+        <video>
+            <source src="example.mp4" type='video/mp4;codecs="avcl.42E01E, mp4a.40.2"' />
+            <source src="example.webm" type='video/webm;codecs="vp8, vorbis"' />
+            <p>A video of a math online class</p>
+        </video>
+        the browser chooses to play one video that uses the format it understands, saving bandwidth of website and speed of a site
+        to avoid some bug in iPad, always start with mp4
+    -->
+    <h2>Flash for audio player</h2>
+    <p>The audio element came with html5, not all browsers support it. It is advisable to use it and flash altogether to favor those with visual and/or physical impairments.
+        With flash, It is advisable to use
+        <ol type="a">
+            <li>A <b>hosted site</b> since they provide you with a player
+                <ul><li>SoundCloud.con</li>
+                    <li>MySpace.com &amp; etc</li>
+                </ul>
+            </li>
+            <li>Use <b>Flash</b>, allowing you to olay mp3 files from simple controls for a single track to complex controls for playlists</li>
+            <li>Use Html5 Audio element, controls provided are browser dependent.</li>
+        </ol>
+    </p>
+    <p>You may <a href="../1. Exploring Html/flash/audio-using-flash.html">Click Here</a> to view the example of Using Flash for Audio using SWFObject</p>
+    
+    <h2>Html5 Audio tag</h2>
+    <p>This examples use source tag for multiple audio, since browsers have different audio preferences. <strong>Note</strong> that the <b>src</b> attribute is not used 
+        on the audio tag for now. But it is a good practice when we have one format of audio. 
+    We used source tag instead. <br />
+    <b>.ogg</b> Vorbis audio format for  browers such as FireFox 3.6, Chrome 6, Opera 1.5 <br >
+    <b>.mp3</b> audio format for  browers such as IE9, Safari 5+, Chrome 6+, Firefox etc
+    </p>
+    <p>See Example, <a href="../1. Exploring Html/flash/audio.html">Press Here</a></p>
+    <hr>
+    <p>Move to see final styled form,  
+        <button>
+            <a href="1.0_designed_form.html">Open</a>
+        </button>
+    </p>
+</body>
+</html>

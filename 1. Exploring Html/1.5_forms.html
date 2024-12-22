@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body style="width: 50%;font-size: 15;font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;">
+    <h2>Forms</h2>
+
+    <p>Forms are used when we want to collect information from users(visitors) on our website.
+        This includes examples such as an pplication form, sign up, shopping online etc. <br />
+        There are several types of form controls used to collect data to your site.
+        <ol type="1">
+            <li>Adding Text
+                <ul>
+                    <li>Text Input(single line)</li>
+                    <li>Password Input(single line but masks characters)</li>
+                    <li>Text Area(used for comments or paragraphs)</li>
+                </ul>
+            </li>
+            <li>Making choice
+                <ul>
+                    <li>Radio Buttons(circle options allowing user to select only one)</li>
+                    <li>CheckBoxes(squares allowing user to select multiple options)</li>
+                    <li>Drop-down boxes(list allowing user to choose one given option)</li>
+                </ul>
+            </li>
+            <li>Submitting Forms
+                <ul>
+                    <li>Submit Buttons</li>
+                    <li>Image Buttons(same as ubmit button, except that an image is used)</li>
+                </ul>
+            </li>
+            <li>Uploading Files
+                <ul>
+                    <li>File upload(images, pdt, etc)</li>
+                </ul>
+            </li>
+        </ol>
+    </p>
+
+    <h3>Example of a form(image taken from boostrap website)</h3>
+    <img src="images/example-form-bootstrap.png" alt="Image demonstrating a form" height="660" width="553" />
+    <br />
+    <h3>Form Structure</h3>
+    <dl>    <!--definition list-->
+        <dt>form tag</dt>
+        <dd>Open tag for every form, must carry the <b>action</b>, <b>method</b> and <b>id</b> attributes. <br />
+            <b>Action</b> attribute points to URL of the page on the server that will receive the information when the form is submitted. <br />
+            <b>Method</b> attribute takes the <b>get</b> or <b>post</b> value. <br>
+            The get method takes value in the form and appends them at the end of the URL in the action attribute. It is 
+            ideal for short forms(search boxes) and retrieving ata from the web server(not adding or deleting data) <br>
+            The post method takes value in the form and sends them as HTTP headers, used when uploading a file, when having a long 
+            form, passwords(sensitive data), or adding or deleting information from a database <br>
+            <b>id</b> attribute is used to identify this form from other elements
+        </dd>
+    </dl> 
+
+    <h3>Text Input and Password Input</h3>
+    <p>Uses input tag with type, name, maxlength, <del>size</del> attributes</p>
+    <form action="https://www.tester.com/example0.php" method="post" id="collect-user-info-form">
+        <p>Username:
+            <input type="email" name="username" size="15" maxlength="30"/>
+        </p>
+        <p>Password:
+            <input type="password" name="password" size="15" maxlength="30" />
+        </p>
+    </form>
+
+    <h3>Text Area</h3>
+    <p>Uses textarea tag with name, cols(number of columns horizontally), and rows(number of lines vertically) attributes</p>
+    <form action="https://www.tester.com/example1.php" method="get" id="collect-user-feedback-form">
+        <p>What do you think about this website <br />
+            <textarea name="feedback" cols="40" rows="4">Enter feedback here...(we'll use placeholder attribute to remove this hint soon)</textarea>
+        </p>
+        </form>
+
+    <h3>Radio Button and CheckBox</h3>
+    <p>Uses input tag with type, name, value, and checked attributes. <strong>Note:</strong> If a Radio Button is used the type is set to 'radio'. 
+    And for a Check Box set type to 'check.  <b>The name attribute in all the radio buttons/checkboxes points to the same value.</b></p>
+    <form action="https://www.tester.com/example2.php" method="post" id="collect-user-feedback-form">
+        <p>Choose movie: 
+            <input type="radio" name="movie-name" value="Spider-Man" checked="checked"/>Spider-Man
+            <input type="radio" name="movie-name" value="The Invisible Man" />The Invisible Man
+            <input type="radio" name="movie-name" value="Pinoccio" />Pinoccio
+        </p>
+
+        <p>Please select your favorite movies: <br />
+            <input type="checkbox" name="favorite-movie" value="Black Panther" checked="checked"/>Black Panther <br />
+            <input type="checkbox" name="favorite-movie" value="Night at the Museum" />Night at the Museum <br />
+            <input type="checkbox" name="favorite-movie" value="Big Mouth" />Big Mouth
+        </p>
+    </form>
+
+    <h3>Drop-down list/Select box</h3>
+    <p>Uses name attribute that will be sent to the server with the selected value. <br />
+        It contains multiple <b>option</b> tag, the option tag has value attribute pointing to the value that will be sent to the server. <br />
+        For allowing visitors to select multiple option, use multiple attribute passing the mutliple value
+    </p>
+    <form action="https://www.tester.com/example3.php" method="post" id="collect-user-country-form">
+        <p>Which country are you located? (You can press and hold down control or command key while selecting multiple options.) <br />
+            <select name="country-list" multiple="multiple"> <!--used for drop-down list box-->
+                <option value="South Africa" selected="selected">South Africa</option>
+                <option value="China">China</option>
+                <option value="America">America</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Congo">China</option>
+                <option value="Nigeria">America</option>
+                <option value="Persia">Brazil</option>
+            </select>
+        </p>
+    </form>
+
+    <h3>File Input Box and Submit button</h3>
+    <p>Uses <b>input</b> tag with <b>type</b> set to 'file' and <b>name</b> of the option allowing users to attach the file as pdf, mp3, jpg, etc</p>
+    <form action="https://www.tester.com/example4.php" method="post" id="collect-user-file-form">
+        <p>Please attach your resume or CV below.</p>
+        <input type="file" name="user-resume" multiple="multiple"/> <!--add the multiple attribute to allow multiple files-->
+        <input type="submit" value="Upload" />
+    </form>
+
+    <h3>Image Button</h3>
+    <p>Uses type attribute set to image(We added text input), src, alt, width and height attributes</p>
+    <form action="https://www.tester.com/example5.php" method="get" id="collect-user-subscription-email-form">
+        <p>Subscribe to our eamil list:
+            <input type="email" name="user-email" size="40" maxlength="30"/>
+            <input type="image" src="images/enter-button-no-background.png" alt="press enter to subscribe" width="60" height="60" align="center"/>
+        </p>
+    </form>
+
+    <h3>Button And Hidden Form Controls</h3>
+    <p>Place a <b>button</b> in a form, inside the button span texts. The use <b>input</b> tag with type set to hidden, including name and value attributes</p>
+    <form action="https://www.tester.com/example6.php" method="get" id="hidden-lyrics-form">
+        <button>
+            <img src="images/transparent-button.png" alt="Add" width="40" height="40" align="center"/>Add
+        </button>
+        <input type="hidden" name="bookmark" value="lyrics" size="40" maxlength="100"/> <!--THIS IS A HIDDEN CONTROL, may be used to trace the pages users were
+             when submitting the form-->
+    </form> <br />
+    <br />
+    
+    <h2>An Example Of A Registration Application Form</h2>
+    <p>Every visitor is required to pass through registration step as it is part of our conpany Ts&Cs. Fill up all necessary steps below.</p>
+    <h3>Register</h3>
+    <form action="https://www.tester.com/testing.php" method="post" id="registration-form">
+        <p>Enter Legal First Name:
+            <input type="text" name="firstname" size="15" maxlength="30" /> <br /> <br />
+            Enter Legal Family Name:
+            <input type="text" name="lastname" size="15" maxlength="30" /> <br /> <br />
+            Enter Email:
+            <input type="email" name="user-email"  size="15" maxlength="50" /> <br /> <br />
+            Enter Password:
+            <input type="password" name="user''password" size="15" maxlength="15" /> <b>length must be between 8 to 15 characters</b>
+        </p>
+        <p>Where did you hear about us:
+            <select name="partners" multiple="multiple" align="right">
+                <option value="our-website">Our Website</option>
+                <option value="Choose" selected="selected">Choose</option>
+                <option value="other">Other</option>
+                <option value="linkedin">Linkedin</option>
+                <option value="news">News</option>
+                <option value="social">Social Media</option>
+                <option value="inside">Inside Worker</option>
+                <option value="partners">Partners</option>
+            </select>
+        </p>
+        <p>
+            Choose Gender:
+            <select name="gender">
+                
+                <option value="male">Male</option>
+                <option value="Prefer To Not Say" selected="selected">Prefer To Not Say</option>
+                <option value="female">Female</option>
+            </select> 
+            </p>
+            <h3>Upload files below</h3>
+            <p>
+                Please attach Resume/CV: <b>file must be .pdf, .doc or .jpg format</b> <br /><br />
+                <input type="file" name="user-resume"/> 
+                <input type="submit" value="Upload" />
+                <br /> <br />
+            
+            What is your age group: <br /> 
+            <input type="radio" name="age-group" value="18-23" checked="checked"/>18-23
+            <input type="radio" name="age-group" value="24-27" />24-27
+            <input type="radio" name="age-group" value="28-33" />28-33
+            <input type="radio" name="age-group" value="34-above" />34 and Above
+            </p>
+            <h3>Our Terms and Conditions</h3>
+            
+            <p>This company does bluh bluh bluh bluh bluh. As part of this company we bluh bluh bluh bluh as being bluh bluh bluh bluh. By ticking the button below you agree to all our company's terms and conditions.</p>
+        
+        <input type="checkbox" name="agree-to-terms" value="I agree"/>I agree to all. <br />
+        <input type="checkbox" name="subscribe" value="subscribe"/> By checking this, you agree to subscribe on receiving our company's emails.
+        <br />
+        <input type="image" src="images/submitButton.png" alt="Submit" width="80" height="80" align="center"/>
+    </form>
+
+    <h2>Labelling Form Controls</h2>
+    <h3>The label tag, fieldset tag, legend, id, and for attributes </h3>
+
+    <form action="https://www.yester.com/example7.php" method="post" id="user-credetials-example7">
+        <p>Label tag is used to describe or give the text to a form control. Allowing the form controls to have a larger touch space. <br/>
+            Fieldset is used to group related form controls.(useful using css), example:
+    
+            <fieldset style="width: 17%;background-color: rgba(195, 192, 192, 0.515);">
+                <legend>User Credentials</legend>
+                    <label>
+                        Enter username: <br />
+                        <input type="text" name="username" placeholder="enter username" size="40"/> <!--placeholder is a hint that appears on the text input-->
+                    </label> <br />
+                    <label>
+                        Enter password: <br />
+                        <input type="password" name="userpassword" placeholder="must be at least 8 characters" size="40"/>
+                    </label> <br />
+                </fieldset>
+    
+                <input type="checkbox" name="agree-to-company-terms" value="agree" id="iAgree"/>
+                <label for="iAgree">Agree to company terms and conditions</label> <!--the id and for attribute are used to allow user to check the box eeven when the user clicks the control's text-->
+                <br />
+                <input type="image" src="images/submitButton.png" alt="Submit" width="80" height="80" align="center"/>
+        </p>
+    </form>
+
+        <h2>Form Validation</h2>
+        <h3>Uses maxlength, minlength, required attributes</h3>
+    
+    <form action="https://www.yester.com/example7.php" method="post" id="user-credetials-example7">
+        <p>
+            Validation uses the required arribute to not allow users from submitting the from when it is incomplete, 
+            the below fields are required, although css must be used: example:
+    
+            <fieldset style="width: 17%;background-color: rgba(195, 192, 192, 0.515);">
+                <legend>Appointment Register</legend>
+                    <label>
+                        Enter username: <br />
+                        <input type="text" name="username" placeholder="enter username" size="40" maxlength="30" required/> <!--placeholder is a hint that appears on the text input-->
+                    </label> <br />
+                    <label>
+                        Enter password: <br />
+                        <input type="password" name="userpassword" placeholder="must be at least 8 characters" size="40" maxlength="30"
+                        minlength="8" required/> <!--the required attribute exist in HTML5 allowing users to not preceed with an empty field-->
+                    </label>  <br />
+                    <label>
+                        Enter email account: <input type="email" name="user-appoint-email" size="40" placeholder="enter email" required/> <!--browser will treat email as required by default-->
+                    </label> <br />
+                    <label>
+                        Choose appointment date: <input type="date" name="appointment-date" required/>
+                    </label> <br />
+                    <p>If you are needing information on-site, search here
+                        <input type="search" name="on-site-search" placeholder="type your search"/>
+                        <input type="image" src="images/enter-button-no-background.png" alt="press enter to subscribe" width="60" height="60" align="center"/>
+                        <br /><b style="font-size: 10;">Javascript not yet applied</b>
+                    </p>
+                </fieldset>
+    
+                <input type="checkbox" name="agree-to-company-terms" value="agree" id="iAgree" required/>
+                <label for="iAgree">Agree to company terms and conditions</label> <!--the id and for attribute are used to allow user to check the box eeven when the user clicks the control's text-->
+                <br />
+                <input type="image" src="images/submitButton.png" alt="Submit" width="80" height="80" align="center"/>
+        </p>
+    </form>
+    <hr />
+    <p>Move to next project, 
+        <button>
+            <a href="1.6_extra_markup.html">Next</a>
+        </button>
+    </p>
+</body>
+</html>

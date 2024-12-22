@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Playing A Flash Video</title>
+        <meta name="description" content="Example of a flash video using js script" />
+        <meta name="author" content="Ndaedzo Clement Phoshoko"/>
+        <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+        <script type="text/javascript">
+            var flashvars= {};
+            var params = {movie:"onlineclass_presentation.flv"}
+            swfobject.embedSWF("flash/osplayer.swf", "online-class", "400", "300", "8.0.0");
+        </script>
+        <!--path : flash/bird.swf
+            id value on this webpage : bird
+            width : 400px
+            height : 300px
+            min flash version : 8.0.0
+        -->
+    </head>
+    <body>
+        <div id="online-class"> <!--this is the only place where the flash video appears-->
+            <p>Showing a Flash video of bird taking a shower.</p> <!--this text allows browsers not using flash to read the text
+            also users with visual and/or physical impairments-->
+        </div>
+    </body>
+
+    <!--MagicHtml generated script for playlist using MagicHmtl for flash video
+        Copy to where you want to display the video player
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/magichtmlipadvideo.js"></script>
+        <script type="text/javascript" src="js/initipadvideo.js"></script>
+        <div id="magichtmlvideoplayer">
+            <embed src="MagicHtmlVideoPlayer.swf"
+                type="application/x-shockwave-flash"
+                pluginspage="http://www.macromedia.com/go/getflashplayer" 
+                quality="high" allowscriptaccess="always"
+                wmode="transparent"
+                allowFullScreen="true"
+                align="middle"
+                width="640"
+                height="392">
+            </embed>
+            </div>
+    End of video player codes -->
+</html>

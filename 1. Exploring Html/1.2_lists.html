@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists</title>
+</head>
+<body style="width: 50%;font-size: 15;font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;">
+    <h2>Lists</h2>
+    <h3>Type of Lists</h3>
+    <ul> <!--parent tag ul ensures that this list is not ordered-->
+        <li>Ordered lists - each item in the list is numbered e.g set of steps that must be followed for baking. They can be used as sections.</li>
+        <li>Unordered lists - begins with bullets rather than characters indicating order.</li>
+        <li>Definition lists - set of terms along with their definitions</li>
+    </ul>
+
+    <h4>Ordered list</h4>
+    <ol type="i"> <!--observe that type attribute is used to specify the type of list-->
+        <li>List element</li>
+        <li>List element</li>
+        <li>List element</li>
+        <li>List element</li>
+    </ol>
+
+    <h4>Unordered list</h4>
+    <ul type="square"> <!--observe that type attribute is used to yield a square shaped list-->
+        <li>List element</li>
+        <li>List element</li>
+        <li>List element</li>
+        <li>List element</li>
+    </ul>
+
+    <h4>Definition list</h4>
+    <dl> <!--consists of terms and their definitions-->
+        <dt>HTML</dt>
+        <dd>HyperText Markup Langauge used to create web pages.</dd>
+        <dt>CSS</dt>
+        <dd>Stands for Cascade Style Sheet</dd> <!--it is possible to ive a term two or more definitions-->
+        <dd>Used to paint web pages to make them more attractive.</dd>
+        <dt>Scamorze</dt> <!--it is possible to give two terms a single definition-->
+        <dt>Scarmorzo</dt>
+        <dd>An Italian cheese maede from whole cow's milk</dd>
+    </dl>
+
+    <h4>Nested list</h4>
+    <ul>
+        <li>Visit friend's place</li>
+        <li>Send message to :
+            <ol>
+                <li>Clement</li>
+                <li>Mohlala</li>
+                <li>Thobekile</li>
+            </ol>
+        </li>
+        <li>Call John Doe</li>
+    </ul>
+
+    <h2>Links (uses a-tag)</h2>
+    <p>Linking can be done to allow user to move to 
+        <strong>another website, another webpage on same website, or
+            another section of same webpage
+       </strong>. Different linking is applied below.
+    </p>
+
+    <p>Here are the links
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a> (another website, traget="_blank" for newpage).</li> <!--absolute URL, specifies the domain name-->
+            <li><a href="scones-recipe-web.html">Scones Recipe</a> (another page on this website).</li> <!--relative URL, no need for domain name but the page name.html-->
+            <li><a href="#heading-semantic-markup">Semantic markup</a> (open same website but different section).</li>
+        </ul>
+    </p>
+    <hr />
+    <p>Move to next project, 
+        <button>
+            <a href="1.3_images.html">Next</a>
+        </button>
+    </p>
+</body>
+</html>
